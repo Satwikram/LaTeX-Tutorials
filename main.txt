@@ -1,3 +1,5 @@
+Including title, author and date information
+
 \documentclass[12pt, letterpaper]{article}
 \title{My first LaTeX document}
 \author{Hubert Farnsworth\thanks{Funded by the Overleaf team.}}
@@ -5,4 +7,72 @@
 \begin{document}
 \maketitle
 We have now added a title, author, and date to our first \LaTeX{} document!
+\end{document}
+
+Adding comments
+% This line here is a comment. It will not be typeset in the document.
+
+Bold, italics and underlining
+Some of the \textbf{greatest}
+discoveries in \underline{science} 
+were made by \textbf{\textit{accident}}.
+
+Adding images
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{graphicx} %LaTeX package to import graphics
+\graphicspath{{images/}} %configuring the graphicx package
+ 
+\begin{document}
+The universe is immense and it seems to be homogeneous, 
+on a large scale, everywhere we look.
+
+% The \includegraphcs command is 
+% provided (implemented) by the 
+% graphicx package
+\includegraphics{universe}  
+ 
+There's a picture of a galaxy above.
+\end{document}
+
+
+Captions, labels and references
+
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+ 
+\begin{document}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{mesh}
+    \caption{A nice plot.}
+    \label{fig:mesh1}
+\end{figure}
+ 
+As you can see in figure \ref{fig:mesh1}, the function grows near the origin. This example is on page \pageref{fig:mesh1}.
+
+\end{document}
+
+Creating lists in LATEX
+Unordered lists
+
+\documentclass{article}
+\begin{document}
+\begin{itemize}
+  \item The individual entries are indicated with a black dot, a so-called bullet.
+  \item The text in the entries may be of any length.
+\end{itemize}
+\end{document}
+
+Ordered lists
+
+\documentclass{article}
+\begin{document}
+\begin{enumerate}
+  \item This is the first entry in our list.
+  \item The list numbers increase with each entry we add.
+\end{enumerate}
 \end{document}
